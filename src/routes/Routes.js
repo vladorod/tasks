@@ -6,14 +6,10 @@ import Main from './navigation'
 
 const Routes = ({ actions, checked, loggedIn }) => {
   useEffect(() => {
-    actions.authenticate()
+    actions.getTasks()
+    actions.checkUser()
   }, [])
 
-  // TODO: switch router by loggedIn state
-  console.log('[##] loggedIn', loggedIn)
-
-  // rendering
-  if (!checked) return <Text>Loading...</Text>
   return <Main />
 }
 

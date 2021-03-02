@@ -8,6 +8,7 @@ import 'utils/ignore'
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Router from './routes'
+import api from './utils/api'
 
 const App = () => {
   // state
@@ -27,6 +28,7 @@ const App = () => {
 
   // rendering
   if (!didLoad) return <View />
+
   return (
     <Provider store={store}>
       <Router />

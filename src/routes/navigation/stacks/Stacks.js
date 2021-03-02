@@ -2,10 +2,9 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
 import Home from 'scenes/home'
-import Profile from 'scenes/profile'
-import Details from 'scenes/details'
-import HeaderLeft from './HeaderLeft'
+import CreateTask from 'scenes/createTask'
 import HeaderTitle from './HeaderTitle'
+import Auth from '../../../scenes/auth'
 
 // ------------------------------------
 // Constants
@@ -33,18 +32,21 @@ export const HomeNavigator = () => (
       name="Home"
       component={Home}
       options={({ navigation }) => ({
-        title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        title: 'Главная',
       })}
     />
     <Stack.Screen
-      name="Details"
-      component={Details}
+      name="Auth"
+      component={Auth}
       options={({ navigation }) => ({
-        title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        title: 'Авторизация',
+      })}
+    />
+    <Stack.Screen
+      name="createTask"
+      component={CreateTask}
+      options={({ navigation }) => ({
+        title: 'Создание задачи',
       })}
     />
   </Stack.Navigator>
